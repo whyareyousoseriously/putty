@@ -1,0 +1,16 @@
+服务器公网IP:120.78.135.234
+user:root
+password:xuewuzhijing9981.+
+安装Apache
+# yum -y install httpd
+添加linux用户&设置密码：
+# adduser -d /var/www/html siteadmin
+# passwd siteadmin
+修改目录权限：
+#chown -Rf siteadmin.siteadmin /var/www/html
+启动Apache:
+# service httpd start
+
+若系统为centos7以上服务器启动要用systemtcl命令
+阿里云服务器安装完apache通过IP访问无反应
+出现这个状况的原因是阿里云服务器需要在安全组选项配置一下外部可访问端口，比如apache默认使用的端口是80，我们就需要在安全组添加安全组规则。具体操作见：http://blog.csdn.net/sinat_35537471/article/details/72355362
